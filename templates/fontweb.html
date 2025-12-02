@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elecbill.com</title>
+    <link rel="stylesheet" href="../static/font.css">
+</head>
+<body>
+    <div class="conmain">
+        <div class="c2">
+            <h1 class="h1">Select the program you want.</h1>
+            <p class="s">Choose from three calculation programs,</p>
+            <p class="s">each using a different method to estimate your electricity bill.The details and differences are explained </p>
+            <p class="s">in each program's description.Select any program to begin calculating.</p>
+        </div>
+        <div class="c3">
+            <div class="c31">
+                <h2 class="d">Program 1</h2>
+                <p class="contend">This program estimates your monthly electricity cost based on your average daily usage.For example, if you use an appliance for 6 hours per day, the program will calculate how much you would spend in one month using that daily usage as the basis.</p>
+                <a href="{{ url_for('mont1') }}" target="_blank">
+                    <div class="c311">
+                        <b>OPEN</b>
+                    </div></a>
+            </div>
+            <div class="c31">
+                <h2 class="d">Program 2</h2>
+                <p class="contend">This program estimates your monthly electricity cost from your weekly usage.For example, if you use an appliance 5 hours a day on weekdays and not on weekends, it will calculate the estimated monthly cost based on that weekly pattern.</p>              
+                <a href="{{ url_for('mont2') }}" target="_blank">
 
+                    <div class="c311"> 
+                        <b>OPEN</b>
+                    </div></a>
+            </div>
+        </div>
+        <div class="a">
+            <h1 class="h1">Thank you for using the website.</h1>
+            <h3 class="s">If there are any mistakes, please forgive me.</h3>
+        </div>
+    </div>
+</body>
+</html>

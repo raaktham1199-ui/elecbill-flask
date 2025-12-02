@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billprogram2.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mont2.css') }}">
+</head>
+<body>
+    <h2 class="title">&#9889;Check the electricity bill for electrical appliances</h2>
+    <div class="contenner">
+        <div class="contennerleft">
+            <div class="conleft1">
+                <h3 class="title1">&#128269; How to check</h3>
+                    <ul>
+                        <li>Specify the wattage (W) or power rating of the appliance you want to calculate.</li>
+                        <li>Enter the weekly usage hours (Monday-Sunday) accurately for precise results.</li>
+                        <li>Select the month to check your electricity bill.</li>
+                        <li>Check the electricity rate per unit to ensure it is up to date.</li>
+                        <li>Check that fields aren't empty or unrealistic.</li>
+                    </ul>
+                <h3 class="title1">ℹ️ Note</h3>
+                    <ul>
+                        <li>If you don't know the wattage, check the energy label or sticker on the device.</li>
+                        <li>Unrealistic values may distort results.</li>
+                    </ul>
+                <h3 class="title1">⚠️ Power-usage warnings</h3>
+                    <ul>
+                        <li>Using low-efficiency or old appliances.</li>
+                        <li>Damaged or loose cables/plugs can cause unstable current.</li>
+                        <li>Dust buildup in ACs, fridges, or fans makes the motor work harder.</li>
+                        <li>Leaving appliances on.</li>
+                        <li>An overfilled fridge makes the cooling system work harder.</li>
+                        <li>Charging many devices on one power strip can cause overload.</li>
+                    </ul>
+            </div>
+            <div class="conleft2">
+                <h2 class="title2">&#9889;Result of the electricity bill per week</h2>
+                <p class="result">
+                    {{ weekhtml }}
+                    {% if weekhtml != "Please fill in all fields." %}
+                        <br><span class="unit">Bath</span>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <div class="contennerright">
+            <div class="conright1">
+                <form method="POST">
+                    <ul>
+                        <div class="box1">
+                        <li>
+                            <label for="">Amount of wat</label>
+                            <br><input id="wat" type="number" name="wat" step="any">
+                        </li>
+                        </div>
+                        <div class="box2">
+                            <div class="box21">
+                            <br><li>
+                                <label for="">Monday</label>
+                                <br><input id="hours" type="number" name="1">
+                            </li>
+                            <br><li>
+                                <label for="">Tuesday</label>
+                                <br><input id="hours" type="number" name="2"><br>
+                            </li>
+                            <br><li>
+                                <label for="">Wednesday</label>
+                                <br><input id="hours" type="number" name="3"><br>
+                            </li>
+                            <br><li>
+                                <label for="">Thrusday</label>
+                                <br><input id="hours" type="number" name="4">
+                            </li>
+                            </div>
+                            <div class="box22">
+                            <br><li>
+                                <label for="">Friday</label>
+                                <br><input id="hours" type="number" name="5">
+                            </li>
+                            <br><li>
+                                <label for="">Saturday</label>
+                                <br><input id="hours" type="number" name="6">
+                            </li>
+                            <br><li>
+                                <label for="">Sunday</label>
+                                <br><input id="hours" type="number" name="7">
+                            </li>
+                            </div>
+                        </div>
+                        <div class="box3">   
+                        <br><li>
+                            <label for="">Enter the current unit rate (ฺBath/unit).</label>&nbsp;&nbsp;&nbsp;
+                            <br><input id="unit" type="number" name="unit" step="any"><br>
+                        </li>
+                        <br><li>
+                            <label for="month">Select month : </label>&nbsp;&nbsp;&nbsp;
+                            <select id="month" name="month">
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </li>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;<button id="sub" type="submit"><b>Calculate</b></button>
+                    </ul>
+                </form>
+            </div>
+            <div class="conright2">
+                <h2 class="title2">&#9889;Result of the electricity bill per mont</h2>
+                <p class="result">
+                    {{ monthtml }}
+                        {% if monthtml != "Please fill in all fields." %}
+                        <br><span class="unit">Bath</span>
+                        {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
